@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMIA database reference tool</title>
+
+    <script>
+        function redirect() {
+            const id = document.querySelector("#identifier").value;
+
+            const match = id.match(/^OMIA:(\d{3}),(\d{3})(?:-|–)(\d{4})$/)
+
+            location.replace(`https://omia.org/OMIA${match[1]}${match[2]}/${match[3]}`)
+        }
+    </script>
+</head>
+<body>
+    <h1>OMIA database reference tool</h1>
+
+    <form onsubmit="redirect()">
+        <input id="identifier">
+        <button type="submit">Go</button>
+    </form>
+</body>
+</html>
