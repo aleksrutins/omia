@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.skypack.dev/your.css">
     <title>OMIA database reference tool</title>
 
     <script>
@@ -25,13 +26,15 @@
     </script>
 </head>
 <body>
-    <h1>OMIA database reference tool</h1>
-
-    <form onsubmit="redirect(event)">
-        <input id="identifier">
-        <button type="submit">Go</button>
-    </form>
-
-    <a href="javascript:window.open(`https://aleksrutins.github.io/omia/?redirect=${prompt('ID?')}`)">Bookmarklet</a>
+    <container>
+        <h1>OMIA database reference tool</h1>
+    
+        <form onsubmit="redirect(event)">
+            <input id="identifier">
+            <button type="submit">Go</button>
+        </form>
+    
+        <a href="javascript:window.open(`https://aleksrutins.github.io/omia/?redirect=${prompt('ID?')}`)">Bookmarklet</a>
+    </container>
 </body>
 </html>
