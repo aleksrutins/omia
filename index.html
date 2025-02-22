@@ -14,6 +14,14 @@
 
             location.replace(`https://omia.org/OMIA${match[1]}${match[2]}/${match[3]}`)
         }
+
+        window.addEventListener("DOMContentLoaded", () => {
+            const params = new URL(location.href).searchParams;
+            if(params.has("redirect")) {
+                document.querySelector("#identifier").value = params.get("redirect");
+                redirect({preventDefault(){}});
+            }
+        });
     </script>
 </head>
 <body>
@@ -23,5 +31,7 @@
         <input id="identifier">
         <button type="submit">Go</button>
     </form>
+
+    <a href="javascript:window.open(`https://aleksrutins.github.io/omia/?redirect=${prompt('ID?')}`)">Bookmarklet</a>
 </body>
 </html>
